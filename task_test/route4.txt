@@ -1,0 +1,21 @@
++--------+-----------+-------------------------------+-----------------------+---------------------------------------------------------------+------------------------------------------------------+
+| Domain | Method    | URI                           | Name                  | Action                                                        | Middleware                                           |
++--------+-----------+-------------------------------+-----------------------+---------------------------------------------------------------+------------------------------------------------------+
+|        | GET|HEAD  | /                             |                       | Closure                                                       | web                                                  |
+|        | GET|HEAD  | _debugbar/assets/javascript   | debugbar.assets.js    | Barryvdh\Debugbar\Controllers\AssetController@js              | Barryvdh\Debugbar\Middleware\DebugbarEnabled,Closure |
+|        | GET|HEAD  | _debugbar/assets/stylesheets  | debugbar.assets.css   | Barryvdh\Debugbar\Controllers\AssetController@css             | Barryvdh\Debugbar\Middleware\DebugbarEnabled,Closure |
+|        | DELETE    | _debugbar/cache/{key}/{tags?} | debugbar.cache.delete | Barryvdh\Debugbar\Controllers\CacheController@delete          | Barryvdh\Debugbar\Middleware\DebugbarEnabled,Closure |
+|        | GET|HEAD  | _debugbar/clockwork/{id}      | debugbar.clockwork    | Barryvdh\Debugbar\Controllers\OpenHandlerController@clockwork | Barryvdh\Debugbar\Middleware\DebugbarEnabled,Closure |
+|        | GET|HEAD  | _debugbar/open                | debugbar.openhandler  | Barryvdh\Debugbar\Controllers\OpenHandlerController@handle    | Barryvdh\Debugbar\Middleware\DebugbarEnabled,Closure |
+|        | GET|HEAD  | _debugbar/telescope/{id}      | debugbar.telescope    | Barryvdh\Debugbar\Controllers\TelescopeController@show        | Barryvdh\Debugbar\Middleware\DebugbarEnabled,Closure |
+|        | GET|HEAD  | api/user                      |                       | Closure                                                       | api,auth:api                                         |
+|        | GET|HEAD  | contacts                      | contacts.index        | App\Http\Controllers\ContactFormController@index              | web                                                  |
+|        | POST      | contacts                      | contacts.store        | App\Http\Controllers\ContactFormController@store              | web                                                  |
+|        | GET|HEAD  | contacts/create               | contacts.create       | App\Http\Controllers\ContactFormController@create             | web                                                  |
+|        | DELETE    | contacts/{contact}            | contacts.destroy      | App\Http\Controllers\ContactFormController@destroy            | web                                                  |
+|        | GET|HEAD  | contacts/{contact}            | contacts.show         | App\Http\Controllers\ContactFormController@show               | web                                                  |
+|        | PUT|PATCH | contacts/{contact}            | contacts.update       | App\Http\Controllers\ContactFormController@update             | web                                                  |
+|        | GET|HEAD  | contacts/{contact}/edit       | contacts.edit         | App\Http\Controllers\ContactFormController@edit               | web                                                  |
+|        | GET|HEAD  | home                          | home                  | App\Http\Controllers\HomeController@index                     | web,auth                                             |
+|        | GET|HEAD  | tests/test                    |                       | App\Http\Controllers\TestController@index                     | web                                                  |
++--------+-----------+-------------------------------+-----------------------+---------------------------------------------------------------+------------------------------------------------------+
